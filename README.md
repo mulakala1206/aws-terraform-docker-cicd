@@ -19,3 +19,7 @@ Provision AWS infrastructure using Terraform.
 - Security Group
 - SSH (22)
 - HTTP (80)
+
+##### Week1 Assignment Output
+
+<img width="1470" height="956" alt="image" src="https://github.com/user-attachments/assets/3a30f5a4-ee0c-4903-8754-6098e31e430b" />

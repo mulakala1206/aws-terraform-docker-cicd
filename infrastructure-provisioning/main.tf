@@ -65,6 +65,8 @@ resource "aws_instance" "web_server" {
     aws_security_group.web_sg.id
   ]
 
+  user_data = file("${path.module}/scripts/install_docker.sh")
+
   tags = {
     Name = "terraform-ec2-instance"
   }

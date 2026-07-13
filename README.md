@@ -47,7 +47,4 @@ Automate Docker installation on the EC2 instance using a shell script executed t
 - Shell Script (Bash)
 - Docker
 
-##### Week2 Assignment Output
-
-<img width="1449" height="859" alt="Screenshot 2026-07-10 at 1 49 43 PM" src="https://github.com/user-attachments/assets/44790fc6-b255-4ebb-acc3-e2e883c50c58" />
 

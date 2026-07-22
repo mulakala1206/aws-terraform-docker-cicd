@@ -56,5 +56,5 @@ docker rm -f nginx-container 2>/dev/null || true
 docker run -d \
   --name nginx-container \
   --restart unless-stopped \
-  -p 80:80 \
+  -p 8081:80 \
   nginx:latest

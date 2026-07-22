@@ -52,3 +52,22 @@ Automate Docker installation on the EC2 instance using a shell script executed t
 <img width="1449" height="859" alt="Screenshot 2026-07-10 at 1 49 43 PM" src="https://github.com/user-attachments/assets/a90b9409-946e-469b-938d-e8bc8425fb56" />
 
 
+# Week 3 - Container Deployment
+
+Deploy an NGINX Docker container on the EC2 instance and expose it on port 80.
+
+## Objective
+
+Automate the deployment of an NGINX Docker container using a shell script executed through Terraform user data.
+
+## Tasks Completed
+
+- Pulled the latest official NGINX Docker image.
+- Removed any existing NGINX container to ensure idempotent deployment.
+- Deployed the NGINX container in detached mode.
+- Exposed container port **80** to the EC2 instance port **80**.
+- Configured the container to restart automatically after system reboot.
+- Verified the application was accessible through the EC2 Public IP in a web browser.
+
+##### Week3 Assignment Output
+

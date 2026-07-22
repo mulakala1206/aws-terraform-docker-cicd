@@ -71,3 +71,6 @@ Automate the deployment of an NGINX Docker container using a shell script execut
 
 ##### Week3 Assignment Output
 
+<img width="1466" height="948" alt="Screenshot 2026-07-18 at 10 46 38 AM" src="https://github.com/user-attachments/assets/3bf3db7c-647e-4e8b-ae3a-3449b2ae5a7b" />
+
+

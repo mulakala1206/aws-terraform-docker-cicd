@@ -72,3 +72,92 @@ Automate the deployment of an NGINX Docker container using a shell script execut
 ##### Week3 Assignment Output
 
 <img width="1466" height="948" alt="Screenshot 2026-07-18 at 10 46 38 AM" src="https://github.com/user-attachments/assets/3bf3db7c-647e-4e8b-ae3a-3449b2ae5a7b" />
+
+# Week4 - CI/CD Automation with GitHub Actions
+
+## Objective
+
+Automate Terraform workflows using GitHub Actions to provision AWS infrastructure without manually running Terraform commands from a local machine.
+
+## Tasks Completed
+
+* Created a GitHub Actions workflow using terraform.yaml.
+* Configured GitHub Repository Secrets for AWS authentication:
+    * AWS_ACCESS_KEY_ID
+    * AWS_SECRET_ACCESS_KEY
+    * AWS_REGION
+* Integrated GitHub Actions with AWS using IAM credentials.
+* Automated Terraform initialization using terraform init.
+* Automated Terraform validation using terraform validate.
+* Automated Terraform execution planning using terraform plan.
+* Automated infrastructure provisioning using terraform apply -auto-approve.
+* Verified successful workflow execution from the GitHub Actions dashboard.
+* Demonstrated Infrastructure as Code (IaC) deployment through a CI/CD pipeline.
+
+## Technologies Used
+
+* GitHub Actions
+* Terraform
+* AWS EC2
+* AWS IAM
+* YAML
+* Infrastructure as Code (IaC)
+ 
+## GitHub Actions Workflow
+
+name: Terraform CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: infrastructure-provisioning
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+
+## Workflow Execution
+
+1. Developer pushes code to the main branch.
+2. GitHub Actions automatically triggers the workflow.
+3. Terraform initializes the AWS provider.
+4. Terraform validates the configuration.
+5. Terraform generates an execution plan.
+6. Terraform provisions the infrastructure in AWS.
+7. Deployment status is available in the GitHub Actions dashboard.
+
+#### Week 4 Assignment Output
+
+<img width="1470" height="956" alt="Screenshot 2026-07-29 at 6 23 20 PM" src="https://github.com/user-attachments/assets/83d5e725-9823-40cb-8d9a-11a786690cd9" />
+
+<img width="1468" height="559" alt="Screenshot 2026-07-29 at 6 40 24 PM" src="https://github.com/user-attachments/assets/cd158b75-a7b8-4770-9836-de7d66f4c0c5" />
